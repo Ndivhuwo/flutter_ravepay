@@ -15,28 +15,29 @@ class _MyAppState extends State<MyApp> {
   void chargeCard() async {
     final RavepayResult result = await ravePay.chargeCard(
       const RavepayConfig(
-        amount: 4500.0,
-        country: "NG",
-        currency: "NGN",
-        email: "jeremiahogbomo@gmail.com",
-        firstname: "Jeremiah",
-        lastname: "Ogbomo",
+        amount: 20.0,
+        country: "ZA",
+        currency: "ZAR",
+        email: "nthambelenindivhuwo@gmail.com",
+        firstname: "Ndivhu",
+        lastname: "Nthambe",
         narration: "Test Payment",
-        publicKey: "FLWPUBK-cd3500135be97b13a29c70e3ee233cbf-X",
-        secretKey: "FLWSECK-6257675603889ba57c880eda2a936b46-X",
+        publicKey: "",
+        encryptionKey: "",
         txRef: "ravePay-1234345",
-        useAccounts: false,
+        useAccounts: true,
         useCards: true,
         isStaging: true,
         useSave: true,
         metadata: [
-          const RavepayMeta("email", "jeremiahogbomo@gmail.com"),
+          const RavepayMeta("email", "nthambelenindivhuwo@gmail.com"),
           const RavepayMeta("id", "1994"),
         ],
       ),
     );
 
     setState(() {
+      print("Status: ${result.status}");
       _result = result;
     });
   }
@@ -58,12 +59,12 @@ class _MyAppState extends State<MyApp> {
                 new RaisedButton(
                   color: Colors.green,
                   onPressed: () => chargeCard(),
-                  child: new Text("TEST"),
+                  child: new Text("Make Payment"),
                 ),
                 SizedBox(
                   height: 16.0,
                 ),
-                new Text('Working?: ${_result?.toMap()}\n'),
+                _result != null ? new Text('Payment Status ${_result?.status ?? ""}') : Container(),
               ],
             ),
           ),

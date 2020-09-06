@@ -26,7 +26,7 @@ class Ravepay {
     Map result;
     try {
       result = await _channel.invokeMethod('chargeCard', config.toMap());
-      // print(result);
+      print("Flutter Wave Pay Result ${result["status"]}");
     } on PlatformException {
       result = <String, String>{"status": "CANCELLED"};
     }

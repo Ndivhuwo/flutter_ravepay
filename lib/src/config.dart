@@ -8,9 +8,11 @@ class RavepayConfig {
   final String email;
   final String firstname;
   final String lastname;
+  final String phonenumber;
   final String narration;
   final String publicKey;
   final String secretKey;
+  final String encryptionKey;
   final String txRef;
   final bool useAccounts;
   final bool useCards;
@@ -26,9 +28,11 @@ class RavepayConfig {
     @required this.email,
     @required this.firstname,
     this.lastname = "",
+    this.phonenumber = "",
     this.narration = "",
     @required this.publicKey,
-    @required this.secretKey,
+    this.secretKey ="",
+    @required this.encryptionKey,
     @required this.txRef,
     this.metadata,
     this.useAccounts = true,
@@ -46,9 +50,11 @@ class RavepayConfig {
       "email": email,
       "firstname": firstname,
       "lastname": lastname,
+      "phonenumber": phonenumber,
       "narration": narration,
       "publicKey": publicKey,
       "secretKey": secretKey,
+      "encryptionKey": encryptionKey,
       "txRef": txRef,
       "useAccounts": useAccounts,
       "metadata": metadata != null

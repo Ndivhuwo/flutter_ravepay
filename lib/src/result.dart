@@ -23,6 +23,7 @@ class RavepayResult {
   DateTime createdAt;
   DateTime updatedAt;
   RavepayCard card;
+  String status;
 
   String ___status;
   String __status;
@@ -31,6 +32,7 @@ class RavepayResult {
   final Map __payload;
 
   RavepayResult(this.___status, this.__payload) {
+    status = ___status;
     if (!isCancel && __payload != null) {
       __status = __payload['status'];
       __message = __payload['message'];
@@ -97,7 +99,8 @@ class RavepayResult {
       "updatedAt": updatedAt.toString(),
       "txRef": txRef,
       "flwRef": flwRef,
-      "card": card.toMap(),
+      "card": card != null ? card.toMap() : null,
+      "status": ___status
     };
   }
 

@@ -15,10 +15,11 @@ import java.util.Map;
 import android.content.Intent;
 import android.util.Log;
 
-import com.flutterwave.raveandroid.RavePayManager;
 import com.flutterwave.raveandroid.RavePayActivity;
-import com.flutterwave.raveandroid.RaveConstants;
-import com.flutterwave.raveandroid.Meta;
+import com.flutterwave.raveandroid.RaveUiManager;
+import com.flutterwave.raveandroid.rave_java_commons.Meta;
+import com.flutterwave.raveandroid.rave_java_commons.RaveConstants;
+import com.flutterwave.raveandroid.rave_presentation.RavePayManager;
 
 /**
  * FlutterRavepayPlugin
@@ -31,7 +32,7 @@ public class FlutterRavepayPlugin implements PluginRegistry.ActivityResultListen
   private final Registrar registrar;
   private Result pendingResult;
 
-  private RavePayManager ravepayManager;
+  private RaveUiManager ravepayManager;
   private Map<String, Object> chargeParams;
 
   private FlutterRavepayPlugin(Registrar registrar) {
@@ -104,7 +105,7 @@ public class FlutterRavepayPlugin implements PluginRegistry.ActivityResultListen
   private RavePayManager initialize() {
     if (ravepayManager == null) {
       registrar.addActivityResultListener(this);
-      ravepayManager = new RavePayManager(registrar.activity());
+      ravepayManager = new RaveUiManager(registrar.activity());
     }
 
     return ravepayManager;
@@ -122,7 +123,7 @@ public class FlutterRavepayPlugin implements PluginRegistry.ActivityResultListen
 
     ravepayManager.setPublicKey((String) chargeParams.get("publicKey"));
 
-    ravepayManager.setSecretKey((String) chargeParams.get("secretKey"));
+    ravepayManager.setEncryptionKey((String) chargeParams.get("encryptionKey"));
     ravepayManager.setTxRef((String) chargeParams.get("txRef"));
 
     List<Meta> metaList = new ArrayList<Meta>();
