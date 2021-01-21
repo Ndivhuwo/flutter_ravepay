@@ -20,6 +20,7 @@ class RavepayConfig {
   final bool useSave;
   final bool style;
   final List<RavepayMeta> metadata;
+  final String paymentPlan;
 
   const RavepayConfig({
     @required this.amount,
@@ -40,6 +41,7 @@ class RavepayConfig {
     this.isStaging = true,
     this.useSave = true,
     this.style,
+    this.paymentPlan
   });
 
   Map<String, dynamic> toMap() {
@@ -64,6 +66,7 @@ class RavepayConfig {
       "isStaging": isStaging,
       "useSave": useSave,
       "style": null,
+      "paymentPlan": paymentPlan,
     };
   }
 }

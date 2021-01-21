@@ -41,9 +41,9 @@ class RavepayResult {
       if (data != null) {
         id = int.tryParse(data["id"].toString());
         amount = double.tryParse(data["amount"].toString());
-        orderRef = data["order_ref"];
-        raveRef = data["rave_ref"];
-        isLive = int.tryParse(data["id"].toString());
+        orderRef = data["orderRef"];
+        raveRef = data["raveRef"];
+        isLive = int.tryParse(data["is_live"].toString());
         appfee = double.tryParse(data["appfee"].toString());
         merchantfee = double.tryParse(data["merchantfee"].toString());
         chargedAmount = double.tryParse(data["charged_amount"].toString());
@@ -52,14 +52,14 @@ class RavepayResult {
         customerId = int.tryParse(data["customer.id"].toString());
         transactionCurrency = data["transaction_currency"];
         paymentEntity = data["payment_entity"];
-        paymentId = data["payment_id"];
+        paymentId = data["paymentId"];
         chargeType = data["charge_type"];
         fraudStatus = data["fraud_status"];
         narration = data["narration"];
         createdAt = DateTime.tryParse(data["createdAt"]);
         updatedAt = DateTime.tryParse(data["updatedAt"]);
-        txRef = data["tx_ref"];
-        flwRef = data["flw_ref"];
+        txRef = data["txRef"];
+        flwRef = data["flwRef"];
         card = data["card"] != null ? RavepayCard.fromMap(data["card"]) : null;
       }
     }

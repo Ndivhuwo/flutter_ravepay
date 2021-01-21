@@ -86,13 +86,13 @@ public class FlutterRavepayPlugin implements PluginRegistry.ActivityResultListen
     if (requestCode == RaveConstants.RAVE_REQUEST_CODE && data != null) {
       String message = data.getStringExtra("response");
       if (resultCode == RavePayActivity.RESULT_SUCCESS) {
-        Log.d(TAG, "SUCCESS " + message);
+        //Log.i(TAG, "SUCCESS " + message);
         res.put("status", "SUCCESS");
       } else if (resultCode == RavePayActivity.RESULT_ERROR) {
-        Log.d(TAG, "ERROR " + message);
+        Log.i(TAG, "ERROR " + message);
         res.put("status", "ERROR");
       } else if (resultCode == RavePayActivity.RESULT_CANCELLED) {
-        Log.d(TAG, "CANCELLED " + message);
+        Log.i(TAG, "CANCELLED " + message);
         res.put("status", "CANCELLED");
       }
       res.put("payload", message);
@@ -120,6 +120,11 @@ public class FlutterRavepayPlugin implements PluginRegistry.ActivityResultListen
     ravepayManager.setfName((String) chargeParams.get("firstname"));
     ravepayManager.setlName((String) chargeParams.get("lastname"));
     ravepayManager.setNarration((String) chargeParams.get("narration"));
+
+    boolean recurring = hasStringKey("paymentPlan");
+    if (recurring) {
+      ravepayManager.setPaymentPlan((String) chargeParams.get("paymentPlan"));
+    }
 
     ravepayManager.setPublicKey((String) chargeParams.get("publicKey"));
 
