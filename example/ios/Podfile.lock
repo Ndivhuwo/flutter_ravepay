@@ -24,7 +24,7 @@ DEPENDENCIES:
   - Flutter (from `Flutter`)
   - flutter_ravepay (from `.symlinks/plugins/flutter_ravepay/ios`)
   - IQKeyboardManagerSwift
-  - KVNProgress (~> 2.3.1)
+  - KVNProgress
   - PopupDialog
   - Shimmer
   - SwiftValidator (from `https://github.com/jpotts18/SwiftValidator.git`, branch `master`)
@@ -63,7 +63,7 @@ SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   BSErrorMessageView: 67cc7d172995fbc6df602c2b8923f48121ddf7a9
   DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
-  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
   flutter_ravepay: 8a9bbc52698a2305fbb9596162d1a4086d2a532c
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   KVNProgress: d7046cce142f1aeb740db39dc3cacfe910fac354
@@ -73,6 +73,6 @@ SPEC CHECKSUMS:
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SwiftValidator: 249b6b3ae3b294266c5b9de134d94f18f2d5aa47
 
-PODFILE CHECKSUM: accbb475e1bc8f2c9644d8cb33220530a0510777
+PODFILE CHECKSUM: 962b93f3fcb24f80dae63adc332ddec21b4cc1af
 
 COCOAPODS: 1.9.3

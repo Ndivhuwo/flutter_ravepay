@@ -23,6 +23,13 @@ public class SwiftFlutterRavepayPlugin: NSObject, FlutterPlugin, RavePayProtocol
         completionBlock(myArgs)
     }
     
+    
+    public func onDismiss() {
+        var myArgs = [String: Any]()
+        myArgs["status"] = "ERROR";
+        myArgs["payload"] = []
+        completionBlock(myArgs)
+    }
 
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "ng.i.handikraft/flutter_ravepay", binaryMessenger: registrar.messenger())

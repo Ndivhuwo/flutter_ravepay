@@ -6,7 +6,7 @@ ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
 pod 'SwiftValidator', :git => 'https://github.com/jpotts18/SwiftValidator.git', :branch => 'master'
 pod 'BSErrorMessageView', :git => 'https://github.com/BenjaminSarkisyan/BSErrorMessageView.git'
-pod 'KVNProgress', '~> 2.3.1'
+pod 'KVNProgress'
 pod 'IQKeyboardManagerSwift'
 pod 'Alamofire'
 pod 'PopupDialog'
